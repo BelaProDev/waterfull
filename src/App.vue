@@ -106,5 +106,8 @@ export default {
       </nav>
     </header>
     <router-view></router-view>
+    <footer class="flex justify-end">
+      <a class="text-white font-mono mx-3 px-4 mb-3 pb-4" href="mailto:info@waterfull.org">info@waterfull.org</a>
+    </footer>
   </div>
 </template>

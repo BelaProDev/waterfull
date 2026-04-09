@@ -56,7 +56,7 @@
           :key="marker[7]"
           visible
           @click="reset()"
-          :lat-lng="marker[4][1]"
+          :lat-lng="marker[4]"
         >
           <l-icon :icon-url="iconU" :icon-size="iconSize"
           :icon-anchor="iconAnchor"></l-icon>
@@ -113,7 +113,7 @@
           :key="marker[7]"
           visible
           @click="reset()"
-          :lat-lng="marker[4][1]"
+          :lat-lng="marker[4]"
         >
           <l-icon :icon-url="iconU" :icon-size="iconSize"
           :icon-anchor="iconAnchor"></l-icon>
@@ -546,10 +546,10 @@ export default {
       let data = await res.json()
       let listMarkers = Object.values(data.data.reverse())
       for (let marker of listMarkers) {
-        let inside = Object.values(marker.data.content)
+        let inside = Object.values(marker)
         inside.unshift(0)
         if (inside[3]) (
-          this.markers.push(inside)
+            this.markers.push(inside)
         ); else {
           this.markers2.push(inside)
         }

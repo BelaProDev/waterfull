@@ -48,7 +48,7 @@ export default {
       <div class="inline-flex flex font-medium">
         <h2 class="mx-2 mb-8 uppercase whitespace-nowrap">
           <router-link
-            class="no-underline inline-block md:text-xl text-xs p-1 leading-none border rounded text-white border-white hover:border-transparent hover:bg-white"
+            class="no-underline inline-block md:text-xl text-xs p-1 leading-none border rounded text-white border-white hover:border-transparent hover:bg-white hover:text-gray-900"
             to="/find"
           >
             {{ $t('nav.find') }}
@@ -56,7 +56,7 @@ export default {
         </h2>
         <h2 class="mx-2 mb-8 uppercase whitespace-nowrap">
           <router-link
-            class="no-underline inline-block md:text-xl text-xs p-1 leading-none border rounded text-white border-white hover:border-transparent hover:bg-white"
+            class="no-underline inline-block md:text-xl text-xs p-1 leading-none border rounded text-white border-white hover:border-transparent hover:bg-white hover:text-gray-900"
             to="/add"
           >
             {{ $t('nav.add') }}

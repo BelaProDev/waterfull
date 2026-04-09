@@ -1,4 +1,4 @@
-const faunadb = require('faunadb');
+/*const faunadb = require('faunadb');
 // initialize faunaDB client with our secret
 const client = new faunadb.Client({
     secret: process.env.FAUNADB_ADMIN_SECRET,
@@ -48,4 +48,4 @@ exports.handler = async (event, context) => {
             body: 'DENIED'
         }
     }
-}
+}*/

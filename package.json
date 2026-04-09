@@ -9,21 +9,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "faunadb": "^4.8.0",
+    "@netlify/neon": "^0.1.2",
     "leaflet-geosearch": "^3.11.0",
+    "node-fetch": "^3.3.2",
     "vue": "^3.4.15",
-    "vue-i18n": "^9.9.1",
+    "vue-i18n": "^11.3.2",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@intlify/unplugin-vue-i18n": "^2.0.0",
-    "@vitejs/plugin-vue": "^5.0.3",
+    "@intlify/unplugin-vue-i18n": "^11.0.7",
+    "@vitejs/plugin-vue": "^6.0.5",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
     "autoprefixer": "^10.4.17",
     "leaflet": "^1.9.4",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.0.12",
+    "vite": "^8.0.7",
     "vite-plugin-sitemap": "^0.5.3",
     "vue-leaflet-markercluster": "^0.5.1"
   }

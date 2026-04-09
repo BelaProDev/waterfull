@@ -1,4 +1,4 @@
-const faunadb = require('faunadb');
+/*import { neon } from '@netlify/neon'
 // initialize faunaDB client with our secret
 const client = new faunadb.Client({
     secret: process.env.FAUNADB_ADMIN_SECRET,
@@ -8,7 +8,9 @@ const client = new faunadb.Client({
 const apiKey = process.env.VITE_X_API_KEY
 const collection = process.env.VITE_TABLE_MARKERS
 // the query object provides us with functions to create a new document in the collection
-const q = faunadb.query;
+//const q = faunadb.query;
+
+const sql = neon()
 
 exports.handler = async (event, context) => {
     const requestKey = event.headers['x-api-key']
@@ -49,4 +51,4 @@ exports.handler = async (event, context) => {
             body: 'DENIED'
         }
     }
-}
+}*/

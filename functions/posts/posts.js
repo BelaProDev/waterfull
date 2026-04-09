@@ -1,27 +1,18 @@
-const faunadb = require('faunadb');
-// initialize faunaDB client with our secret
-const client = new faunadb.Client({
-    secret: process.env.FAUNADB_ADMIN_SECRET,
-    domain: 'db.fauna.com',
-    scheme: 'https'
-});
+import { neon } from '@netlify/neon';
+const sql = neon(); // automatically uses env NETLIFY_DATABASE_URL
 const apiKey = process.env.VITE_X_API_KEY
-const collection = process.env.VITE_TABLE_MARKERS
-// the query object provides us with functions to create a new document in the collection
-const q = faunadb.query;
+const table = process.env.VITE_TABLE_MARKERS
 
 exports.handler = async (event, context) => {
     const requestKey = event.headers['x-api-key']
     if (apiKey === requestKey) {
         // get the data from the body of the request
-        const data = JSON.parse(event.body);
+        const data = JSON.parse(event.body)
+        const Adata = Array.from(Object.entries(data.content), ([key, value]) => value)
+        console.log(Adata)
         try {
             // create document in existing collection
-            const response = await client.query(
-                q.Create(q.Collection(collection), {
-                    data
-                })
-            );
+            const response = await sql`INSERT INTO markers_f4fp2sk9h45 VALUES (${Adata[0]},${Adata[1]},${Adata[2]},${Adata[3][1]},${Adata[4]},${Adata[5]})`
             return {
                 statusCode: 200,
                 body: JSON.stringify({

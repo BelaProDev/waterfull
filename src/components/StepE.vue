@@ -94,7 +94,7 @@ export default {
   methods: {
     async goToStep(step) {
       await this.imgur()
-      this.$emit('choice', Object.values(Object.values(this.choice)[0])[27])
+      this.$emit('choice', this.choice)
       this.$emit('currentStepUp', step)
     },
     handleImages(files) {

@@ -120,7 +120,7 @@ export default {
           return response.json()
         })
         .then(data => {
-          this.choice = data.data.link
+          this.choice = data.data.link.length > 0 ?  data.data.link : '#'
         })
     },
   },

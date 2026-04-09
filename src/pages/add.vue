@@ -82,7 +82,6 @@
         return result;
       },
       update() {
-        console.log(this.choice)
         fetch('/api/posts', {
           method: 'POST',
           headers: {

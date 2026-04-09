@@ -121,7 +121,6 @@ export default {
         })
         .then(data => {
           this.choice = data.data.link
-          console.log(data.data)
         })
     },
   },

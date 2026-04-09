@@ -120,7 +120,7 @@ export default {
           return response.json()
         })
         .then(data => {
-          this.choice = data
+          this.choice = data.link
           console.log(data)
         })
     },

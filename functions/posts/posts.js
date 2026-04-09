@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
         console.log(Adata)
         try {
             // create document in existing collection
-            const response = await sql`INSERT INTO markers_f4fp2sk9h45 VALUES (${Adata[0]},${Adata[1]},${Adata[2]},${Adata[3][1]},${Adata[4]},${Adata[5]})`
+            const response = await sql`INSERT INTO ${table} VALUES (${Adata[0]},${Adata[1]},${Adata[2]},${Adata[3][1]},${Adata[4]},${Adata[5]})`
             return {
                 statusCode: 200,
                 body: JSON.stringify({

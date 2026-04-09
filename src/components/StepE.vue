@@ -121,6 +121,7 @@ export default {
         })
         .then(data => {
           this.choice = data
+          console.log(data)
         })
     },
   },

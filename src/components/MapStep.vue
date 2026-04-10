@@ -464,7 +464,7 @@ export default {
         let sw = bounds.getSouthWest();
         bounds = '('+sw.lat.toString()+','+sw.lng.toString()+','+ne.lat.toString()+','+ne.lng.toString()+')'
         let result = await fetch(
-          'https://overpass-api.de/api/interpreter',
+          'https://overpass.private.coffee/api/interpreter',
           {
             method: 'POST',
             body: 'data='+ encodeURIComponent(`

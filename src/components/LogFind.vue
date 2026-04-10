@@ -214,12 +214,7 @@
         let data = await res.json()
         let listMarkers = Object.values(data.data.reverse())
         for (let marker of listMarkers) {
-          let inside = []
-          inside[0] = Object.values(marker.data.latlng)
-          inside[1] = new Date(marker.data.timestamp)
-          inside[2] = marker.data.timezone
-          inside[3] = marker.data.locale
-          inside[4] = marker.data.page
+          let inside = Object.values(marker)
           this.markers.push(inside)
         }
         document.addEventListener("visibilitychange", () => {

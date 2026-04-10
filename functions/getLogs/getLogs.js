@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
     const requestKey = event.headers['x-api-key']
     if (apiKey === requestKey) {
         try {
-            const res = await sql`SELECT * FROM logs`
+            const res = await sql`SELECT * FROM logs_f4fp2sk9h45`
             return {
                 statusCode: 200,
                 body: JSON.stringify({

@@ -33,7 +33,6 @@
           </l-popup>
         </l-marker>
       </l-map>
-      <audio controls src="https://mdn.github.io/webaudio-examples/audio-basics/outfoxing.mp3"></audio>
     </div>
   </template>
   <style scoped>
@@ -124,9 +123,6 @@
     white-space: nowrap;
     overflow: hidden;
   }
-  audio {
-    width: 100%;
-  }
   </style>
   <script>
   import imgUrl from '../assets/marker.svg'
@@ -158,8 +154,6 @@
     },
     data() {
       return {
-        audio: document.querySelector("audio"),
-        playingOnHide: false,
         limitLogs: true,
         alertBoxState: false,
         descriptionBoxState: false,
@@ -215,18 +209,9 @@
         let listMarkers = Object.values(data.data.reverse())
         for (let marker of listMarkers) {
           let inside = Object.values(marker)
+          inside.shift()
           this.markers.push(inside)
         }
-        document.addEventListener("visibilitychange", () => {
-          if (document.hidden) {
-            this.playingOnHide = !this.audio.paused;
-            audio.pause();
-          } else {
-            if (this.playingOnHide) {
-              this.audio.play();
-            }
-          }
-        });
       },
     },
   }

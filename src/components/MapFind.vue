@@ -540,6 +540,14 @@
                 }
                 this.opacity = 1
                 this.zoom = 18
+                let gg = JSON.stringify({
+                      latlng: [this.userLocation.lat, this.userLocation.lng],
+                      timestamp: Date.now(),
+                      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                      locale: Intl.DateTimeFormat().resolvedOptions().locale,
+                      page: 'find'
+                    })
+                console.log(gg)
                 if (this.limitLogs) {
                   fetch('/api/logs', {
                     method: 'POST',

@@ -28,7 +28,7 @@
         <l-control position="bottomright">
           <div
           :class="liveActivated ? 'anim' : 'is-active'"
-          class="live-button border border-2 border-gray-400 rounded-md p-1.5 drop-shadow-md bg-white"
+          class="live-button border-2 border-gray-400 rounded-md p-1.5 drop-shadow-md bg-white"
           @click="liveActivated = !liveActivated"
           >
             <img class="w-8" src="https://cdn-icons-png.flaticon.com/512/1679/1679916.png" alt="" />
@@ -61,7 +61,7 @@
             :icon-anchor="iconAnchor"></l-icon>
             <l-popup class="popup-map t-4">
               <img
-                v-if="marker[5].substring(0, 4) == 'http' || marker[5].substring(0, 4) == 'data' "
+                v-if="marker[5].substring(0, 4) === 'http' || marker[5].substring(0, 4) === 'data' "
                 class="photo"
                 v-bind:src="marker[5]"
               />
@@ -117,7 +117,7 @@
             :icon-anchor="iconAnchor"></l-icon>
             <l-popup class="popup-map t-4">
               <img
-                v-if="marker[5].substring(0, 4) == 'http' || marker[5].substring(0, 4) == 'data' "
+                v-if="marker[5].substring(0, 4) === 'http' || marker[5].substring(0, 4) === 'data' "
                 class="photo"
                 v-bind:src="marker[5]"
               />
@@ -174,7 +174,7 @@
             <l-popup class="t-4">
               <div v-for="item in marker[2]">
                 <img
-                  v-if="item.substring(0, 4) == 'http'"
+                  v-if="item.substring(0, 4) === 'http'"
                   class="photo"
                   :src="imageUrl || item"
                   @error="imageUrl='https://cdn-icons-png.flaticon.com/512/12696/12696524.png'"
@@ -192,7 +192,7 @@
                 >
                   <img class="pict" src="../assets/steps/tap.svg" />
                 </div>
-              <h1 class="text-xs" v-if="marker[6] != ''" style="margin-top: 0.3em;">{{ marker[6] }}</h1>
+              <h1 class="text-xs" v-if="marker[6] !== ''" style="margin-top: 0.3em;">{{ marker[6] }}</h1>
               <h1 style="font-size: 1em; margin-top: 1em;">{{ marker[3] ? $t('map.drinkable') : $t('map.notdrinkable') }}</h1>
               <h1 style="font-size: 1em; margin-top: 1em;" v-for="tag in marker[1].slice(0,2)">{{tag}}</h1>
               <div v-if="marker[1].length > 2">

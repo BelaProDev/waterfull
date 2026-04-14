@@ -71,12 +71,12 @@ export default {
   data() {
     return {
       activeTab: 0,
-      input: '#',
+      input: '',
     }
   },
   methods: {
     goToStep: function(step) {
-      this.$emit('choice', this.input)
+      this.$emit('choice', this.input === '' ? '#' : this.input)
       this.$emit('currentStepUp', step)
     },
   },

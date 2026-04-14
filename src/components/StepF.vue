@@ -71,7 +71,7 @@ export default {
   data() {
     return {
       activeTab: 0,
-      input: '',
+      input: '#',
     }
   },
   methods: {
